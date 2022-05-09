@@ -22,12 +22,12 @@ int main(int number,char *input[])//number表示输入的参数的个数，*inpu
     else if(input[1][1] == 'w')//统计单词 
 	{
 	 	char newinput[10000];//newinput用于存放读取的文件内容转换成的字符数组
-		while(fscanf(fp,"%s",newinput) != EOF)//读取文件中的所有字符内容存进newinput数组中直到文件结尾 
+		while(fscanf(fp,"%s",newinput) != EOF)//读取文件中的字符内容遇到空格和换行时结束并存进newinput数组 
 		{
-			count++;
+			count++;//统计用空格或换行隔开的单词数 
 			for(int i=1;i<strlen(newinput)-1;i++)
 			{
-				if(newinput[i] == ',' && newinput[i-1] != ',' && newinput[i+1] != ',')
+				if(newinput[i] == ',' && newinput[i-1] != ',' && newinput[i+1] != ',')//判断是否存在用逗号隔开的单词 
 				{
 					count++;
 				}
