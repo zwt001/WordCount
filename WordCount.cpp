@@ -17,7 +17,7 @@ int main(int number,char *input[])//number表示输入的参数的个数，*inpu
 		{
 			count++;
 		} 
-		 printf("字符数：%d\n",count); 
+		printf("字符数：%d\n",count); 
 	}
     else if(input[1][1] == 'w')//统计单词 
 	{
@@ -36,6 +36,5 @@ int main(int number,char *input[])//number表示输入的参数的个数，*inpu
 		 printf("单词数：%d\n",count); 
 	}
     fclose(fp);//关闭当前文件流
-    return 0;
-	
+    return 0;	
 }
