@@ -1,28 +1,28 @@
 #include <stdio.h>
 #include <string.h>
 
-int main(int number,char *input[])//number±íÊ¾ÊäÈëµÄ²ÎÊıµÄ¸öÊı£¬*input[]ÎªÖ¸ÕëÊı×é£¬Ã¿Ò»¸öÖ¸ÕëÖ¸ÏòÒ»¸ö×Ö·û´® 
+int main(int number,char *input[])//numberè¡¨ç¤ºè¾“å…¥çš„å‚æ•°çš„ä¸ªæ•°ï¼Œ*input[]ä¸ºæŒ‡é’ˆæ•°ç»„ï¼Œæ¯ä¸€ä¸ªæŒ‡é’ˆæŒ‡å‘ä¸€ä¸ªå­—ç¬¦ä¸² 
 {
 	FILE *fp;
-	int count=0;//count±íÊ¾×îºóÍ³¼ÆµÄÎÄ¼şÖĞµÄµ¥´Ê»ò×Ö·û¸öÊı
-	if((fp=fopen(input[2],"r")) == NULL)//´ò¿ªÎÄ¼şÊ§°Ü 
+	int count=0;//countè¡¨ç¤ºæœ€åç»Ÿè®¡çš„æ–‡ä»¶ä¸­çš„å•è¯æˆ–å­—ç¬¦ä¸ªæ•°
+	if((fp=fopen(input[2],"r")) == NULL)//æ‰“å¼€æ–‡ä»¶å¤±è´¥ 
 	{
-		printf("´ò¿ªÎÄ¼şÊ§°Ü£¡"); 
+		printf("æ‰“å¼€æ–‡ä»¶å¤±è´¥ï¼"); 
 		return 0; 
 	} 
-	if(input[1][1] == 'c')//Í³¼Æ×Ö·û 
+	if(input[1][1] == 'c')//ç»Ÿè®¡å­—ç¬¦ 
 	{
-	 	char newinput;//newinputÓÃÓÚ´æ·Å¶ÁÈ¡µÄÎÄ¼şÄÚÈİ×ª»»³ÉµÄ×Ö·û
-		while((newinput = fgetc(fp))!= EOF)//¶ÁÈ¡ÎÄ¼şÖĞµÄ×Ö·ûÖĞÖ±µ½ÎÄ¼ş½áÎ² 
+	 	char newinput;//newinputç”¨äºå­˜æ”¾è¯»å–çš„æ–‡ä»¶å†…å®¹è½¬æ¢æˆçš„å­—ç¬¦
+		while((newinput = fgetc(fp))!= EOF)//è¯»å–æ–‡ä»¶ä¸­çš„å­—ç¬¦ä¸­ç›´åˆ°æ–‡ä»¶ç»“å°¾ 
 		{
 			count++;
-		 } 
-		 printf("×Ö·ûÊı£º%d\n",count); 
+		} 
+		 printf("å­—ç¬¦æ•°ï¼š%d\n",count); 
 	}
-    else if(input[1][1] == 'w')//Í³¼Æµ¥´Ê 
+    else if(input[1][1] == 'w')//ç»Ÿè®¡å•è¯ 
 	{
-	 	char newinput[10000];//newinputÓÃÓÚ´æ·Å¶ÁÈ¡µÄÎÄ¼şÄÚÈİ×ª»»³ÉµÄ×Ö·ûÊı×é
-		while(fscanf(fp,"%s",newinput) != EOF)//¶ÁÈ¡ÎÄ¼şÖĞµÄËùÓĞ×Ö·ûÄÚÈİ´æ½ønewinputÊı×éÖĞÖ±µ½ÎÄ¼ş½áÎ² 
+	 	char newinput[10000];//newinputç”¨äºå­˜æ”¾è¯»å–çš„æ–‡ä»¶å†…å®¹è½¬æ¢æˆçš„å­—ç¬¦æ•°ç»„
+		while(fscanf(fp,"%s",newinput) != EOF)//è¯»å–æ–‡ä»¶ä¸­çš„æ‰€æœ‰å­—ç¬¦å†…å®¹å­˜è¿›newinputæ•°ç»„ä¸­ç›´åˆ°æ–‡ä»¶ç»“å°¾ 
 		{
 			count++;
 			for(int i=1;i<strlen(newinput)-1;i++)
@@ -33,9 +33,9 @@ int main(int number,char *input[])//number±íÊ¾ÊäÈëµÄ²ÎÊıµÄ¸öÊı£¬*input[]ÎªÖ¸ÕëÊı
 				}
 			}
 		 } 
-		 printf("µ¥´ÊÊı£º%d\n",count); 
+		 printf("å•è¯æ•°ï¼š%d\n",count); 
 	}
-	fclose(fp);
+    fclose(fp);//å…³é—­å½“å‰æ–‡ä»¶æµ
     return 0;
 	
 }
